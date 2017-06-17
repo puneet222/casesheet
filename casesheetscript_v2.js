@@ -65,11 +65,15 @@ $(function() {
         );
       });
     });
-
+    var i = 0 ;
     Object.keys(attachments).forEach(function (key) {
       var val = attachments[key];
       // val is an array
       var valHtml = '' ;
+      i++ ;
+      var customId = 'lightGallery' + i ;
+      var galleryHtml = '<div class="demo-gallery">' ;
+      galleryHtml += '<ul style="margin:0px;padding:0px;" id="' + customId + '">' ;
       val.forEach(function(row){
         var url = '' ;
         var value = '' ;
@@ -83,14 +87,20 @@ $(function() {
           }
         });
         // got the url and value
-        valHtml += '<a href="' + url + '" >' + value + '</a><br>' ;
+        var infoHtml = '' ;
+        galleryHtml += '<li style="margin:0px;" data-reponsive="' + url + '" data-src="' + url + '" data-sub-html="<h3>' +  value + '</h3>" >' ;
+        galleryHtml += '<a><h5 style="margin:0px;font-size:0.9em;color:#1787fb;text-decoration:underline">' + value + '</h5></a>' ;
+        galleryHtml += '</li>' ;
       });
+      galleryHtml += '</ul>' ;
+      galleryHtml += '</div>' ;
       $('.case-table').append
         ($('<tr>' +
               '<td class="case-table-left">' + key + ' :</td>' +
-              '<td class="case-table-right">' + valHtml + '</td>' +
+              '<td class="case-table-right">' + galleryHtml + '</td>' +
            '</tr>')
       );
+      $("#" + customId).lightGallery() ;
     });
 
 
