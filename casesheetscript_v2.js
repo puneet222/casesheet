@@ -7,7 +7,7 @@ $(function() {
 
   var caseId = '1551798614836935_1489643243.62';   // ------------------  changed
   var doctorId= '123';                            // ------------------  changed
-  var $header2 = $('.header2');
+  var $header2 = $('.header2-content');
 
   console.log(location) ;
   $('.topBar').hide() ;

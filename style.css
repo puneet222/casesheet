@@ -48,8 +48,8 @@ body {
   background-color: #1787fb;
   color: white;
   height: 50px;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 15%;
+  padding-right: 15%;
   padding-top: 5px;
   text-align: center;
 }
@@ -252,7 +252,10 @@ tr {
   border-width: 1px 0;
 }
 
-
+.header2-content{
+  position: relative;
+  top : 22%;
+}
 
 
 .small {
